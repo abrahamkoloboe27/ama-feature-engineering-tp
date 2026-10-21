@@ -35,7 +35,7 @@ cd feature_store
 uv run feast apply                 # enregistre (ou met à jour) les définitions de definitions.py dans le registre
 uv run feast feature-views list    # le catalogue : les vues de variables enregistrées
 uv run feast materialize 2013-06-01T00:00:00 2017-10-01T00:00:00   # remplit le magasin en ligne (données de juin 2013 à septembre 2017)
-uv run feast ui                    # une interface web pour parcourir entités, vues et services
+uv run feast ui --port 8889        # une interface web pour parcourir entités, vues et services (8888 est le port de Jupyter)
 ```
 
 Le notebook fait la même chose avec l'API Python (`FeatureStore(repo_path=...)`, `store.apply(...)`, `store.get_historical_features(...)`, `store.materialize(...)`, `store.get_online_features(...)`).

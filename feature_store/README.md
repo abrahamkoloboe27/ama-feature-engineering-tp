@@ -24,7 +24,7 @@ cd feature_store
 uv run feast apply                                  # enregistrer les définitions dans le registre
 uv run feast feature-views list                     # le catalogue
 uv run feast materialize 2013-06-01T00:00:00 2017-10-01T00:00:00
-uv run feast ui                                     # parcourir le catalogue dans le navigateur
+uv run feast ui --port 8889                         # le catalogue dans le navigateur (8888 est le port de Jupyter)
 ```
 
 Les dates de `feast materialize` sont explicites : les données s'arrêtent en 2017, et

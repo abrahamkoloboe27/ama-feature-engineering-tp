@@ -13,7 +13,7 @@ dependencies = [
     "jupyterlab>=4.2",
     "ipykernel>=6.29",
     "duckdb>=1.1",
-    "feast>=0.60",
+    "feast[grpcio]>=0.60",
 ]
 
 [dependency-groups]
