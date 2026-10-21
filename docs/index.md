@@ -14,7 +14,7 @@ On répond à cette question sur **119 208 réservations réelles** de deux hôt
 | [01 · A · Le strict minimum](notebooks/01_approche_A_strict_minimum.ipynb) | colonnes brutes, one-hot et standardisation, rien de plus | cours 1, slides 19 à 21 |
 | [02 · B · Le métier d'abord](notebooks/02_approche_B_variables_metier.ipynb) | variables métier, dates cycliques, historique à date, jointure, encodage par la cible | cours 1, slides 11 à 22 ; cours 2, slides 7 et 8 |
 | [03 · C · Générer puis réduire](notebooks/03_approche_C_generer_puis_reduire.ipynb) | interactions automatiques, puis ACP, filtre, wrapper et L1 | cours 1, slide 17 ; cours 2, slides 11 à 23 |
-| [04 · D · Laisser faire les arbres](notebooks/04_approche_D_arbres.ipynb) | encodage ordinal, sans mise à l'échelle, catégorielles natives | cours 1, slide 19 ; cours 2, slides 3 et 28 |
+| [04 · D · Laisser faire les arbres](notebooks/04_approche_D_arbres.ipynb) | encodage ordinal, sans mise à l'échelle, catégorielles natives | cours 1, slides 19 et 23 ; cours 2, slides 3 et 28 |
 | [05 · Comparer les approches](notebooks/05_comparer_les_approches.ipynb) | le tableau final et le modèle retenu, face à des réservations nouvelles | cours 2, slides 24, 25 et 28 |
 | [06 · Feature store avec Feast](notebooks/06_feature_store_feast.ipynb) | **optionnel** : calculer en SQL, enregistrer, servir et tracer les variables | cours 1, slide 14 |
 

@@ -52,7 +52,7 @@ data/referentiels/pays.csv   continent et appartenance à l'UE de chaque pays (p
 src/fe_tp/                   le code partagé : chargement, découpage, historique à date, évaluation des 5 modèles
 notebooks/                   les 7 notebooks, exécutés
 feature_store/               le dépôt Feast du notebook 06 (définitions des entités et des vues de variables)
-output/                      les scores de chaque approche (resultats_*.csv) ; le reste est régénéré
+output/                      les sorties des notebooks 01 à 04, lues par le 05 : scores (resultats_*.csv), probabilités (probas_*.parquet), modèle retenu (modele_B.joblib)
 docs/                        la documentation publiée sur GitHub Pages (MkDocs Material)
 ```
 

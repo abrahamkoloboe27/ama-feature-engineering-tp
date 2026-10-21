@@ -665,7 +665,7 @@ requires-dist = [
     { name = "numpy", specifier = ">=2.0,<3" },
     { name = "pandas", specifier = ">=2.2,<3" },
     { name = "pyarrow", specifier = ">=16.1" },
-    { name = "scikit-learn", specifier = ">=1.8" },
+    { name = "scikit-learn", specifier = ">=1.9" },
 ]
 
 [package.metadata.requires-dev]

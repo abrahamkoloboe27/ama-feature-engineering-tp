@@ -32,10 +32,10 @@ Les variables d'historique de l'approche B, comme `taux_annul_passe_agent`, ne s
 
 ```bash
 cd feature_store
-feast apply                 # enregistre (ou met à jour) les définitions de definitions.py dans le registre
-feast feature-views list    # le catalogue : les vues de variables enregistrées
-feast materialize 2015-01-01T00:00:00 2017-09-01T00:00:00   # remplit le magasin en ligne
-feast ui                    # une interface web pour parcourir entités, vues et services
+uv run feast apply                 # enregistre (ou met à jour) les définitions de definitions.py dans le registre
+uv run feast feature-views list    # le catalogue : les vues de variables enregistrées
+uv run feast materialize 2013-06-01T00:00:00 2017-10-01T00:00:00   # remplit le magasin en ligne (données de juin 2013 à septembre 2017)
+uv run feast ui                    # une interface web pour parcourir entités, vues et services
 ```
 
 Le notebook fait la même chose avec l'API Python (`FeatureStore(repo_path=...)`, `store.apply(...)`, `store.get_historical_features(...)`, `store.materialize(...)`, `store.get_online_features(...)`).

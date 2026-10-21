@@ -26,7 +26,7 @@ Les cinq modèles sont définis une fois pour toutes dans `fe_tp.evaluation.mode
 
 | Décision | Choix | Pourquoi |
 |---|---|---|
-| Séjour et prix | nuits, personnes, famille, prix total, prix par personne | un gros séjour engage davantage |
+| Séjour et prix | nuits, personnes, famille, prix total, prix par personne | hypothèse : un gros séjour engage davantage (le notebook 02 montre qu'elle ne tient pas telle quelle) |
 | Dates | mois et jour de la semaine en (sin, cos), arrivée le week-end | décembre est voisin de janvier |
 | Délai | `lead_time` et tranches métier (une semaine, un mois, trois mois, six mois) | on annule d'autant plus qu'on a réservé longtemps à l'avance |
 | Historique du client | taux d'annulation passé, client connu | le passé du client prédit son comportement |
@@ -45,7 +45,7 @@ Les cinq modèles sont définis une fois pour toutes dans `fe_tp.evaluation.mode
 | Génération | `PolynomialFeatures(degree=2)` sur les 14 numériques, plus le one-hot : environ 470 colonnes | toutes les interactions, sans hypothèse |
 | C1 · extraire | `PCA(n_components=0.95)` | garder 95 % de la variance |
 | C2 · filtrer | `SelectKBest(f_classif, k=40)` | un score par variable, sans modèle |
-| C3 · embedded | `SelectFromModel(LogisticRegression(l1_ratio=1, solver="liblinear", C=0.05))` | la pénalité L1 met des coefficients à zéro |
+| C3 · embedded | `SelectFromModel(LogisticRegression(l1_ratio=1, solver="liblinear", C=0.05, tol=1e-3, random_state=0))` | la pénalité L1 met des coefficients à zéro ; `tol=1e-3` réduit le temps de calcul |
 | Wrapper | `SequentialFeatureSelector` en démonstration | trop coûteux sur 470 colonnes |
 | Toujours | la réduction est **dans** le pipeline | sélectionner avant de valider donne une erreur trop optimiste |
 

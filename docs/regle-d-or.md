@@ -13,7 +13,7 @@ Avant chaque variable : « **Cette valeur était-elle connue à l'instant de la 
 | `reservation_status_date` | la date de ce statut | idem, à travers la date |
 | `assigned_room_type` | la chambre est attribuée au check-in | 5 % d'annulations quand elle diffère de la chambre réservée, contre 42 % sinon |
 | `booking_changes` | compte les modifications faites **après** la réservation | elle vaut 0 à l'instant de la réservation, par définition |
-| `required_car_parking_spaces` | la place de parking se note à l'arrivée | **0 %** d'annulation sur les 7 416 réservations qui en ont une |
+| `required_car_parking_spaces` | la place de parking se note à l'arrivée | **0 %** d'annulation sur les 7 409 réservations qui en ont une (7 416 dans le fichier brut, avant `charger()`) |
 
 Deux colonnes surprenantes, mais **légitimes** :
 

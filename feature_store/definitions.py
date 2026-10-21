@@ -29,7 +29,8 @@ pays = Entity(
     name="pays",
     join_keys=["country"],
     value_type=ValueType.STRING,
-    description="Pays d'origine du client (code ISO 3166-1 à trois lettres).",
+    description=("Pays d'origine du client : code ISO 3166-1 à trois lettres, sauf « CN », doublon de « CHN », "
+                 "et « TMP », ancien code du Timor oriental."),
     tags={"domaine": "réservations hôtelières"},
     owner=PROPRIETAIRE,
 )

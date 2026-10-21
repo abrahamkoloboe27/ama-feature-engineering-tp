@@ -17,9 +17,9 @@ Le modèle retenu, **B + gradient boosting**, obtient aussi la meilleure précis
 
 ## Ce que disent les chiffres
 
-1. **Le métier paie.** Les variables de B (historique à date, délai, dates cycliques, jointure, encodage par la cible) font gagner 0,015 au gradient boosting, 0,018 à la forêt, 0,027 au réseau et 0,036 au kNN, avec 83 colonnes au lieu de 365. La régression logistique ne gagne rien : le one-hot des agents lui donnait déjà l'essentiel.
+1. **Le métier paie.** Les variables de B (historique à date, délai, dates cycliques, jointure, encodage par la cible) font gagner 0,015 au gradient boosting, 0,017 à la forêt, 0,026 au réseau et 0,036 au kNN, avec 83 colonnes au lieu de 365. La régression logistique, elle, ne gagne rien (0,851 contre 0,853) : les colonnes brutes, bien encodées, lui suffisaient déjà.
 2. **Générer sans hypothèse ne suffit pas.** Aucune variante de C ne bat A. L'ACP, non supervisée, garde la variance et non l'information utile pour la cible : tous les modèles reculent. Le filtre univarié jette des colonnes utiles. La pénalité L1 s'en sort le mieux, mais reste en dessous de A.
-3. **La bonne préparation dépend du modèle.** Avec des codes ordinaux et sans mise à l'échelle (D), les arbres restent au niveau de A, avec 25 colonnes et en quelques secondes. La régression logistique, le kNN et le réseau, eux, chutent de 0,06 à 0,10.
+3. **La bonne préparation dépend du modèle.** Avec des codes ordinaux et sans mise à l'échelle (D), le gradient boosting natif reste au niveau de A (0,870 contre 0,873), avec 25 colonnes et en quelques secondes ; la forêt, sans support natif, perd un peu (0,852 contre 0,870). La régression logistique, le kNN et le réseau, eux, chutent de 0,06 à 0,10.
 4. **Le cadre compte autant que les variables.** Une fuite donne une AUC de 1 ; un découpage au hasard flatte le score ; un encodage par la cible appris sur train + test gagne deux points qui n'existeront jamais en production (notebooks 00 et 02).
 
 ## La fiche réflexe du cours 2, vérifiée sur les données
@@ -29,10 +29,10 @@ Le modèle retenu, **B + gradient boosting**, obtient aussi la meilleure précis
 | Linéaires et logistiques | nécessaire | one-hot, ou encodage par la cible | utile, Lasso intégré | D (codes ordinaux, échelles brutes) : 0,853 → 0,786, et une convergence lente |
 | kNN, SVM, k-means, ACP | indispensable | one-hot | très utile | le plus sensible : de 0,719 (D) à 0,853 (B) |
 | Réseaux de neurones | indispensable | one-hot ou plongements | souvent apprise | meilleur avec B (0,881) |
-| Arbres, forêts, boosting | inutile | ordinal ou support natif | pour le coût et la lisibilité | D égale A avec 15 fois moins de colonnes |
+| Arbres, forêts, boosting | inutile | ordinal ou support natif | pour le coût et la lisibilité | le boosting natif de D égale A (0,870 contre 0,873) avec 15 fois moins de colonnes ; la forêt perd 0,018 |
 
 ## Les limites de cette comparaison
 
-- Un seul découpage dans le temps : les écarts de l'ordre de 0,005 ne sont pas significatifs.
+- Un seul découpage dans le temps et un seul tirage : une autre graine déplace l'AUC de B d'environ 0,002, presque autant que l'écart entre A et D pour le boosting (0,003) : on ne départage pas de tels écarts. L'avance de B sur A (environ 0,015) résiste, elle, au bootstrap comme aux graines (notebook 05).
 - Aucun réglage d'hyperparamètres : chaque modèle garde les mêmes réglages dans toutes les approches.
 - Deux hôtels, une période : rien ne garantit que les mêmes choix gagneraient ailleurs.
