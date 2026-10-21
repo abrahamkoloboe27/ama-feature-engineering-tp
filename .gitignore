@@ -10,4 +10,5 @@ output/*
 !output/probas_*.parquet
 feature_store/data/
 *.joblib
+!output/modele_B.joblib
 .DS_Store
