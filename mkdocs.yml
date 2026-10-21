@@ -1,0 +1,72 @@
+site_name: TD Feature engineering · AMA
+site_description: "Module 14 · Feature engineering & transformation : quatre approches comparées sur les annulations de réservations d'hôtel, et un feature store Feast"
+site_author: Abraham Zacharie Koloboe
+site_url: https://abrahamkoloboe27.github.io/ama-feature-engineering-tp/
+repo_url: https://github.com/abrahamkoloboe27/ama-feature-engineering-tp
+repo_name: ama-feature-engineering-tp
+edit_uri: ""
+copyright: "AMA · UE Ingénierie des données · Module 14 — données : Antonio, de Almeida et Nunes (2019), CC BY 4.0"
+
+theme:
+  name: material
+  language: fr
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: amber
+      toggle: {icon: material/weather-night, name: Mode sombre}
+    - scheme: slate
+      primary: indigo
+      accent: amber
+      toggle: {icon: material/weather-sunny, name: Mode clair}
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - toc.follow
+    - search.highlight
+
+plugins:
+  - search:
+      lang: fr
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true
+      ignore_h1_titles: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+nav:
+  - Accueil: index.md
+  - Installer et lancer: installation.md
+  - Les données: donnees.md
+  - La règle d'or et les fuites: regle-d-or.md
+  - Les quatre approches: approches.md
+  - Notebooks:
+      - 00 · Cadrer le problème: notebooks/00_cadrer_le_probleme.ipynb
+      - 01 · A · Le strict minimum: notebooks/01_approche_A_strict_minimum.ipynb
+      - 02 · B · Le métier d'abord: notebooks/02_approche_B_variables_metier.ipynb
+      - 03 · C · Générer puis réduire: notebooks/03_approche_C_generer_puis_reduire.ipynb
+      - 04 · D · Laisser faire les arbres: notebooks/04_approche_D_arbres.ipynb
+      - 05 · Comparer les approches: notebooks/05_comparer_les_approches.ipynb
+      - 06 · Feature store avec Feast: notebooks/06_feature_store_feast.ipynb
+  - Résultats et fiche réflexe: resultats.md
+  - Feature store (Feast): feature-store.md
+  - Déroulé de la séance: deroule.md

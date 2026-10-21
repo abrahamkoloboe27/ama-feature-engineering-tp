@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.ruff_cache/
+site/
+docs/notebooks/
+output/*
+!output/resultats_*.csv
+!output/probas_*.parquet
+feature_store/data/
+*.joblib
+.DS_Store

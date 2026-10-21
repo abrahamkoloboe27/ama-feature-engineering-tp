@@ -1,0 +1,10 @@
+# Le dépôt Feast du TD (notebook 06). Les chemins sont relatifs à ce dossier.
+project: hotel_annulations
+provider: local
+registry: data/registry.db          # le catalogue : entités, vues, services, dates
+online_store:                       # le magasin en ligne : la dernière photo de chaque clé
+  type: sqlite
+  path: data/online_store.db
+offline_store:                      # le magasin hors ligne : l'historique des photos (parquet)
+  type: file
+entity_key_serialization_version: 3
